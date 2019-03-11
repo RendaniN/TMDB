@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  template: `
-    <p>
-      home works!
-    </p>
-  `,
+  templateUrl: '/home.compponent.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+  latestMovies: any[] = [];
+  
+  constructor(private moviesdb: MoviesDb) { 
 
-  ngOnInit() {
+    this.latestMovies.moviesdb.getDiscoverMovies().subscribe((data: any) => {
+      this.latestMovies = data; 
+    });
   }
 
 }
