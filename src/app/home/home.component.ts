@@ -1,19 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { MoviesDb } from '../services/moviesdb.services';
 
 @Component({
   selector: 'app-home',
-  templateUrl: '/home.compponent.html',
+  templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
 
-  latestMovies: any[] = [];
-  
-  constructor(private moviesdb: MoviesDb) { 
+  movies: any[] = [];
+  loading: boolean;
 
-    this.latestMovies.moviesdb.getDiscoverMovies().subscribe((data: any) => {
-      this.latestMovies = data; 
-    });
+  constructor(private moviedb: MoviesDb) {
+
+    this.loading = true;
+
+    this.moviedb.getDiscoverMovies()
+      .subscribe((data: any) => {
+
+        console.log(data);
+        this.movies = data;
+        this.loading = false;
+      });
+
   }
+
 
 }

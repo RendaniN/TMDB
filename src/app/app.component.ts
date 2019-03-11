@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MoviesDb } from './services/moviesdb.services';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'MWEB';
+  title = 'MWEB Assessment';
+
+  constructor(public movieservice: MoviesDb){
+    this.movieservice.getDiscoverMovies().subscribe(data => console.log(data));
+  }
 }

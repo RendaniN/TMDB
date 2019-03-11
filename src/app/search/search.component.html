@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col">
+      <input
+        #searchString
+        type="text"
+        (keyup)="search(searchString.value)"
+        class="form-control"
+        placeholder="Search Movie.."
+      />
+    </div>
+  </div>
+  
+  <app-preflight class="m-5" *ngIf="preflight"></app-preflight>
+  
+  <app-cards *ngIf="!preflight" [items]="movie"></app-cards>

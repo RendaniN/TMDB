@@ -10,7 +10,7 @@ export class CardsComponent {
 
   @Input() items: any[] = [];
 
-  constructor(private router) { }
+  constructor(private router: Router) { }
 
   getMovie(item: any){
     let movieId;

@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-preflight',
-  template: `
-    <p>
-      preflight works!
-    </p>
-  `,
+  templateUrl: './preflight.component.html',
   styleUrls: ['./preflight.component.scss']
 })
 export class PreflightComponent implements OnInit {

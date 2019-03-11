@@ -1,19 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MoviesDb } from '../services/moviesdb.services';
 
 @Component({
   selector: 'app-movies',
-  template: `
-    <p>
-      movies works!
-    </p>
-  `,
+  templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss']
 })
-export class MoviesComponent implements OnInit {
+export class MoviesComponent {
 
-  constructor() { }
+  movies: any = {};
+  loading: boolean = false;
 
-  ngOnInit() {
+  constructor(private router: ActivatedRoute, private moviedb: MoviesDb) {
+
+    this.loading = true;
+    this.router.params.subscribe(params => {
+      this.moviedb.getMovie(params['id']).subscribe(movies => {
+          this.movies = movies;
+          console.log(movies);
+          this.loading = false;
+      })
+    })
+
   }
-
 }
