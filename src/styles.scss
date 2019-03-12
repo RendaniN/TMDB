@@ -1,67 +1,113 @@
-@import "styles-variables.scss";
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'styles-variables.scss';
+html, body{
+  padding: 0;
+  margin: 0;
+  width:100%; height:100%;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  // background: #333333;
+}
 
-body {
-    background-color: black;
-    color: white !important;
+app-home a{
+  color: white;
+  text-decoration: none;
+}
+
+app-home hr {  border-color: transparent;  }
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.padding-top-60 {
+  padding-top: 60px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    padding-right: 0;
+    padding-left: 0;
   }
-  
-  hr {
-    border-color: white;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
-  
-  .puntero {
-    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
-  
-  .img-circle {
-    border-radius: 100%;
-    width: 150px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
-  
-  .card-title,
-  .card-text {
-    color: black;
+}
+
+
+.loading {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #F44336;
+  position: fixed;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+
+.loading h4 {
+  color: white;
+  margin-left: 40px;
+}
+
+.loading:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  background: #E2E4E6;
+  top: 10px;
+  left: -5px;
+  animation: spin 1.2s infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .badge {
-    margin-left: 5px;
-  }
-  
-  .btn-outline-success {
-    margin-left: 5px;
-  }
-  
-  .img-thumb {
-    width: 50px;
-    height: 50px;
-  }
-  
-  /* Animaciones */
-  
-  .animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-  
-  .fast {
-    -webkit-animation-duration: 0.4s;
-    animation-duration: 0.4s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .fadeIn {
-    animation-name: fadeIn;
-  }
+}
+
+.center{
+  text-align: center;
+}
+
+.error {
+  margin: 10px auto auto;
+}
+
+.docs-footer {
+  background: #212121;
+  color: white;
+  margin-top: 40px;
+  padding: 12px;
+  font-size: 12px;
+}
+
+.docs-footer-list {
+  padding: 8px;
+}

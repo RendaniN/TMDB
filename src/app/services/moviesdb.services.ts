@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: "root"
 })
 export class MoviesDb {
 
-  
   private api: string = "https://api.themoviedb.org/3";
   private apikey: string = "7536392b5281f105cf041e1c0649bb2b";
 
@@ -29,7 +29,7 @@ export class MoviesDb {
     );
   }
 
-  getSearchedMovie(searchString: string) {
+  getSearchedMovie(searchString: string){
     return this.getQuery(`/search/movie?query=${searchString}&sort_by=popularity.desc`).pipe(map((data: any) => data.results));
   }
 

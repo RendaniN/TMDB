@@ -1,11 +1,26 @@
-<mat-grid-list cols="6" rowHeight="1:2">
-    <mat-grid-tile (click)="getMovie(item)" *ngFor="let item of items">
-            <mat-card class="example-card">
-                    <mat-card-content>
-                        <img mat-card-image [src]="item | movieArtwork">
-                    </mat-card-content>
-                </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
+
+    <mat-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <mat-card mat-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" mat-theme-watch>
+                <mat-card-title>
+                <mat-card-title-text>
+                    <span class="mat-headline">Card with image</span>
+                    <span class="mat-subhead">Large</span>
+                </mat-card-title-text>
+                <mat-card-title-media>
+                    <div class="md-media-lg card-media"></div>
+                </mat-card-title-media>
+                </mat-card-title>
+                <mat-card-actions layout="row" layout-align="end center">
+                <mat-button>Action 1</mat-button>
+                <mat-button>Action 2</mat-button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </mat-content>
+
+
+   
+
 
 

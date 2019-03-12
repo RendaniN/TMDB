@@ -1,7 +1,19 @@
-<mat-toolbar color="primary">
-        <mat-toolbar-row>
-          <span>MWEB Assessment</span>
-          <span class="example-spacer"></span>
-            <mat-icon routerLink="search" class="example-icon">search</mat-icon>
-        </mat-toolbar-row>
-</mat-toolbar>
+<div>
+  <mat-toolbar color="transparate">
+    <mat-toolbar-row>
+      <span>My Movies</span>
+      <span class="example-spacer"></span>
+      <div class="row">
+        <div class="col">
+          <input
+            #searchString
+            type="text"
+            (keyup)="search(searchString.value)"
+            class="form-control"
+            placeholder="Search for Movies.."
+          />
+        </div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

@@ -1,19 +1,15 @@
 <app-preflight *ngIf="loading"></app-preflight>
-<div class="container main-container animated fadeIn fast">
-
+ 
+<div class="m10"></div>
+<div class="container main-container animated fadeIn fast ">
     <div class="row">
-
         <div class="col-md-5">
-            <img [src]="movies | movieArtwork" class="img-thumbnail img-fluid">
+       
+            <img [src]="movies | movieArtwork" class="img-thumbnail img-fluid mt10">
         </div>
-
-
         <div class="col-md-7">
-            <h3>Title</h3>
+            <h3>{{ movies.original_title }}</h3>
             <hr>
-            <p class="text-justify">
-                {{ movies.original_title }}
-            </p>
             <h3>Sinopsis</h3>
             <hr>
             <p class="text-justify">
@@ -24,10 +20,11 @@
                 Release Date: <span class="badge badge-secondary">{{ movies.release_date }}</span>
             </p>
 
-            <button [routerLink]="['/'+regresarA, busqueda ]" type="button" class="btn btn-outline-danger">
+            <button [routerLink]="['/'+regresarA, busqueda ]" type="button" class="btn btn-outline-danger mb10">
                 Back
             </button>
-
+            
         </div>
     </div>
 </div>
+

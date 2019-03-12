@@ -17,7 +17,6 @@ export class HomeComponent {
 
     this.moviedb.getDiscoverMovies()
       .subscribe((data: any) => {
-
         console.log(data);
         this.movies = data;
         this.loading = false;

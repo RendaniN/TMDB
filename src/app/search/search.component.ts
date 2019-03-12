@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { MoviesDb } from '../services/moviesdb.services';
 
 @Component({
@@ -7,6 +7,7 @@ import { MoviesDb } from '../services/moviesdb.services';
   styleUrls: ["./search.component.scss"]
 })
 export class SearchComponent {
+
   movie: any[] = [];
   loading: boolean;
 
