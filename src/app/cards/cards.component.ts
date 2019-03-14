@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-cards',
@@ -8,8 +9,7 @@ import { Router } from "@angular/router";
 })
 export class CardsComponent {
 
-  @Input() items: any[] = [];
-
+  @Input() items: any =[];
   constructor(private router: Router) { }
 
   getMovie(item: any){

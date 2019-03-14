@@ -1,2 +1,29 @@
-<app-preflight *ngIf="loading"></app-preflight>
-<app-cards [items]="movies"></app-cards>
+
+    <div class="jumbotron">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input class="primary" [(ngModel)]="searchString" name="searchString" (keyup)="searchMovies(searchString)" type="text" placeholder="Search Here..." aria-label="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                          <mat-option *ngFor="let option of options" [value]="option.original_title">
+                            {{option.original_title}}
+                          </mat-option>
+                    </mat-autocomplete>
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div *ngIf="searchRes">
+                <div class="row is-flex">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of searchRes; let i = index;">
+                    <app-cards [items]="movie"></app-cards>
+                  </div>
+                </div>
+              </div>
+  
+
+  <h6>Top Rated Movies</h6>
+  <div class="row is-flex">
+    <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of movies; let i = index;">
+        <app-cards [items]="movie"></app-cards>
+    </div>
+  </div>

@@ -9,13 +9,14 @@ import { CardsComponent } from './cards/cards.component';
 import { MoviesComponent } from './movies/movies.component';
 import { HeaderComponent } from './header/header.component';
 import { PreflightComponent } from './preflight/preflight.component';
-import { NgElement } from '@angular/elements';
 import { SliderComponent } from './slider/slider.component';
 import { createCustomElement } from '@angular/elements';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { MatCardModule, MatGridListModule, MatDividerModule,  MatToolbarModule, MatIconModule, MatFormFieldModule,
-MatAutocompleteModule,} from '@angular/material';
+MatAutocompleteModule,MatInputModule} from '@angular/material';
 
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { MovieArtworkPipe } from './movie-artwork.pipe';
@@ -46,7 +47,9 @@ import { MovieArtworkPipe } from './movie-artwork.pipe';
     MatIconModule,
     MatFormFieldModule,
     MatAutocompleteModule,
-    FlexLayoutModule  
+    MatInputModule,
+    FlexLayoutModule,
+    FormsModule, ReactiveFormsModule  
   ],
   entryComponents: [SliderComponent],
   providers: [],

@@ -29,8 +29,8 @@ export class MoviesDb {
     );
   }
 
-  getSearchedMovie(searchString: string){
-    return this.getQuery(`/search/movie?query=${searchString}&sort_by=popularity.desc`).pipe(map((data: any) => data.results));
+  getSearchedMovie(query: string){
+    return this.getQuery(`/search/movie?query=${query}&sort_by=popularity.desc`).pipe(map((data: any) => data.results));
   }
 
   getMovie(id: string) {

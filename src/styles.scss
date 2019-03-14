@@ -1,113 +1,119 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'styles-variables.scss';
-html, body{
-  padding: 0;
-  margin: 0;
-  width:100%; height:100%;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-  // background: #333333;
+
+
+::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
+  background-color: white !important;
+  color: white !important
 }
 
-app-home a{
-  color: white;
-  text-decoration: none;
+::ng-deep .mat-form-field-empty.mat-form-field-label {
+    color: white;
 }
 
-app-home hr {  border-color: transparent;  }
-
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+.app-container {
+  margin-top: 60px;
 }
 
-.padding-top-60 {
-  padding-top: 60px;
+.row.is-flex {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+.row.is-flex>[class*='col-'] {
+  display: flex;
+  flex-direction: column;
 }
 
 
-.loading {
-  width: 30px;
-  height: 30px;
-  border: 5px solid #F44336;
-  position: fixed;
-  left: 50%;
-  margin-left: -20px;
-  top: 50%;
-  margin-top: -20px;
+/*
+* And with max cross-browser enabled.
+* Nobody should ever write this by hand.
+* Use a preprocesser with autoprefixing.
+*/
+
+.row.is-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.row.is-flex>[class*='col-'] {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.loader,
+.loader:before,
+.loader:after {
   border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
 }
 
-.loading h4 {
-  color: white;
-  margin-left: 40px;
+.loader {
+  color: #ffffff;
+  font-size: 10px;
+  margin: 80px auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
 }
 
-.loading:after {
+.loader:before,
+.loader:after {
   content: '';
   position: absolute;
-  width: 40px;
-  height: 10px;
-  background: #E2E4E6;
-  top: 10px;
-  left: -5px;
-  animation: spin 1.2s infinite;
+  top: 0;
 }
 
-@keyframes spin {
+.loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.loader:after {
+  left: 3.5em;
+}
+
+@-webkit-keyframes load7 {
+  0%,
+  80%,
   100% {
-    transform: rotate(360deg);
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
   }
 }
 
-.center{
-  text-align: center;
-}
-
-.error {
-  margin: 10px auto auto;
-}
-
-.docs-footer {
-  background: #212121;
-  color: white;
-  margin-top: 40px;
-  padding: 12px;
-  font-size: 12px;
-}
-
-.docs-footer-list {
-  padding: 8px;
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
 }

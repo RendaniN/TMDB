@@ -1,19 +1,9 @@
-<div>
-  <mat-toolbar color="transparate">
+<mat-toolbar class="navbar navbar-dark bg-dark">
     <mat-toolbar-row>
-      <span>My Movies</span>
+        <a href="../" class="navbar-brand">Movie DB</a>
       <span class="example-spacer"></span>
-      <div class="row">
         <div class="col">
-          <input
-            #searchString
-            type="text"
-            (keyup)="search(searchString.value)"
-            class="form-control"
-            placeholder="Search for Movies.."
-          />
+          
         </div>
-      </div>
     </mat-toolbar-row>
-  </mat-toolbar>
-</div>
+</mat-toolbar>

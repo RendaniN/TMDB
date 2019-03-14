@@ -8,18 +8,8 @@ import { MoviesDb } from '../services/moviesdb.services';
 })
 export class SearchComponent {
 
-  movie: any[] = [];
+  searchRes: any = [];
   loading: boolean;
 
   constructor(private moviedb: MoviesDb) {}
-
-  search(searchString: string) {
-
-    this.loading = true;
-    this.moviedb.getSearchedMovie(searchString).subscribe((data: any) => {
-
-      this.movie = data;
-      this.loading = false;
-    });
-  }
 }

@@ -1,5 +1,16 @@
 <app-preflight *ngIf="loading"></app-preflight>
- 
+<div class="jumbotron">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input class="primary" [(ngModel)]="item" name="item" (keyup.enter)="getMovie(item)" type="text" placeholder="Search Here..." aria-label="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                          <mat-option *ngFor="let option of options" [value]="option.original_title">
+                            <a routerLink="/movies/{{option.id}}" title="{{option.original_title}}">{{option.original_title}}</a>
+                          </mat-option>
+                    </mat-autocomplete>
+            </mat-form-field>
+        </form>
+    </div>
 <div class="m10"></div>
 <div class="container main-container animated fadeIn fast ">
     <div class="row">
@@ -20,7 +31,7 @@
                 Release Date: <span class="badge badge-secondary">{{ movies.release_date }}</span>
             </p>
 
-            <button [routerLink]="['/'+regresarA, busqueda ]" type="button" class="btn btn-outline-danger mb10">
+            <button [routerLink]="['/'+return, results ]" type="button" class="btn btn-outline-secondary mb10">
                 Back
             </button>
             

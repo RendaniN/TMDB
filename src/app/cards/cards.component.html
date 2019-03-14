@@ -1,26 +1,12 @@
-
-    <mat-content class="md-padding" layout-xs="column" layout="row">
-        <div flex-xs flex-gt-xs="50" layout="column">
-            <mat-card mat-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" mat-theme-watch>
-                <mat-card-title>
-                <mat-card-title-text>
-                    <span class="mat-headline">Card with image</span>
-                    <span class="mat-subhead">Large</span>
-                </mat-card-title-text>
-                <mat-card-title-media>
-                    <div class="md-media-lg card-media"></div>
-                </mat-card-title-media>
-                </mat-card-title>
-                <mat-card-actions layout="row" layout-align="end center">
-                <mat-button>Action 1</mat-button>
-                <mat-button>Action 2</mat-button>
-                </mat-card-actions>
-            </mat-card>
-        </div>
-    </mat-content>
-
-
-   
-
+<div class="thumbnail" (click)="getMovie(items)">
+    <img src="https://image.tmdb.org/t/p/w300/{{items.poster_path}}" *ngIf="items.poster_path">
+    <img src="assets/img/abstract-image.jpg" *ngIf="!items.poster_path">
+    <div class="caption">
+      <h6 class="text-ellipsis">
+        <a routerLink="/movie/{{items.id}}" title="{{items.title}}">{{items.title}}</a>
+      </h6>
+    </div>
+    <div class="space-10"></div>
+  </div>
 
 
