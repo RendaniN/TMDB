@@ -1,6 +1,9 @@
 # MWEB
 <!-- developer: rendani nemakhavhani -->
 
+## Description
+Angular 6/7 Material TMDB (The Movie Database) Application.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
 ## Development server
